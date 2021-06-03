@@ -27,18 +27,15 @@ public class Main {
 
             switch (difficulty) {
                 case 1:
-                    System.out.println("легкий ");
-                    System.out.println("Введите любое число от 1 до 10: ");
+                    System.out.println("легкий\nВведите любое число от 1 до 10:");
                     compNumber = rnd.nextInt(10) + 1;
                     break;
                 case 2:
-                    System.out.println("средний ");
-                    System.out.println("Введите любое число от 1 до 50: ");
+                    System.out.println("средний\nВведите любое число от 1 до 50:  ");
                     compNumber = rnd.nextInt(50) + 1;
                     break;
                 case 3:
-                    System.out.println("сложный ");
-                    System.out.println("Введите любое число от 1 до 100: ");
+                    System.out.println("сложный\nВведите любое число от 1 до 100: ");
                     compNumber = rnd.nextInt(100) + 1;
                     break;
             }
