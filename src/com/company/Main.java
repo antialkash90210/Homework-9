@@ -12,6 +12,8 @@ public class Main {
         int numberOfAttempts = 0;
         int compNumber = 0;
         int userNumber = 0;
+        int max=0;
+        int min=100;
         final int EXIT_CODE = -1;
         boolean inputNumber;
 
@@ -29,14 +31,20 @@ public class Main {
                 case 1:
                     System.out.println("легкий\nВведите любое число от 1 до 10:");
                     compNumber = rnd.nextInt(10) + 1;
+                    max=10;
+                    min=1;
                     break;
                 case 2:
                     System.out.println("средний\nВведите любое число от 1 до 50:  ");
                     compNumber = rnd.nextInt(50) + 1;
+                    max=50;
+                    min=1;
                     break;
                 case 3:
                     System.out.println("сложный\nВведите любое число от 1 до 100: ");
                     compNumber = rnd.nextInt(100) + 1;
+                    max=100;
+                    min=1;
                     break;
             }
         }
@@ -58,9 +66,9 @@ public class Main {
                 }
 
                 if (userNumber > compNumber) {
-                    System.out.println("Введите число поменьше: ");
+                    System.out.println("Введите число поменьше: от " +min+ "до "+userNumber);
                 } else if (userNumber < compNumber) {
-                    System.out.println("Введите число побольше: ");
+                    System.out.println("Введите число побольше: от "+userNumber+ "до " +max);
                 }
 
                 if (userNumber != EXIT_CODE) {
