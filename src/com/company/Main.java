@@ -13,29 +13,29 @@ public class Main {
         int compNumber = 0;
         int userNumber = 0;
         final int EXIT_CODE = -1;
-        boolean inputResult;
+        boolean inputNumber;
 
         int difficulty;
         boolean inputDifficulty;
 
         try {
             inputDifficulty = true;
-            System.out.println("Введите сложность игры от 1 до 3: ");
+            System.out.println("Введите сложность игры: 1 - легкий, 2 - средний, 3 - сложный: ");
             difficulty = input.nextInt();
 
             switch (difficulty) {
                 case 1:
-                    System.out.println("легко ");
+                    System.out.println("легкий ");
                     System.out.println("Введите любое число от 1 до 10: ");
                     compNumber = rnd.nextInt(10) + 1;
                     break;
                 case 2:
-                    System.out.println("средне ");
+                    System.out.println("средний ");
                     System.out.println("Введите любое число от 1 до 50: ");
                     compNumber = rnd.nextInt(50) + 1;
                     break;
                 case 3:
-                    System.out.println("сложно ");
+                    System.out.println("сложный ");
                     System.out.println("Введите любое число от 1 до 100: ");
                     compNumber = rnd.nextInt(100) + 1;
                     break;
@@ -47,11 +47,12 @@ public class Main {
         }
 
         do {
-            inputResult = true;
+            inputNumber = true;
 //           Scanner input = new Scanner(System.in);
 
             try {
                 userNumber = input.nextInt();
+
 
                 if (userNumber < 1 || userNumber > 100) {
                     throw new Exception();
@@ -68,17 +69,21 @@ public class Main {
                 }
             }
             catch (Exception e) {
-                inputResult = false;
+                inputNumber = false;
             }
 
-        } while (compNumber != userNumber || inputResult == false);
+        } while (compNumber != userNumber || inputNumber == false);
+
+        if (compNumber == 10) {
+            System.out.print("Счастливое число :) ");
+        }
 
         System.out.println("Поздравляю,вы угадали число!! ");
         System.out.println("Количество попыток: " + numberOfAttempts);
 
-        if (numberOfAttempts <= 3) {
-            System.out.println("гений");
-        } else if (numberOfAttempts > 3 && numberOfAttempts <= 6) {
+        if (numberOfAttempts <= 5) {
+            System.out.println("красава");
+        } else if (numberOfAttempts > 5 && numberOfAttempts <= 10) {
             System.out.println("среднячок");
         } else {
             System.out.println("лошара");
