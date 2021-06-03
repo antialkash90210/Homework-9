@@ -18,6 +18,7 @@ public class Main {
         int difficulty;
         boolean inputDifficulty;
 
+        //choice of difficulty level
         try {
             inputDifficulty = true;
             System.out.println("Введите сложность игры: 1 - легкий, 2 - средний, 3 - сложный: ");
@@ -46,13 +47,13 @@ public class Main {
             System.out.println("Ошибка ввода,перезапустите программу " + e.getMessage());
         }
 
+        //computer number output
         do {
             inputNumber = true;
-//           Scanner input = new Scanner(System.in);
+//           Scanner input = new Scanner(System.in); - try catch работает только при переинициализации Scanner
 
             try {
                 userNumber = input.nextInt();
-
 
                 if (userNumber < 1 || userNumber > 100) {
                     throw new Exception();
@@ -74,6 +75,8 @@ public class Main {
 
         } while (compNumber != userNumber || inputNumber == false);
 
+
+        //decision result
         if (compNumber == 10) {
             System.out.print("Счастливое число :) ");
         }
