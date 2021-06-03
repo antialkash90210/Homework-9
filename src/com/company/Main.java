@@ -15,10 +15,11 @@ public class Main {
         final int EXIT_CODE = -1;
         boolean inputNumber;
 
+
+        //choice of difficulty level
         int difficulty;
         boolean inputDifficulty;
 
-        //choice of difficulty level
         try {
             inputDifficulty = true;
             System.out.println("Введите сложность игры: 1 - легкий, 2 - средний, 3 - сложный: ");
