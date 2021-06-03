@@ -7,7 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
 
         Random rnd = new Random();
         int numberOfAttempts = 0;
@@ -19,21 +18,33 @@ public class Main {
         compNumber = rnd.nextInt(10) + 1;
 
         do {
-            System.out.println("Введите любое число от 1 до 10: ");
-            userNumber = input.nextInt();
+            inputResult = true;
+            Scanner input = new Scanner(System.in);
 
-            if (userNumber > compNumber) {
-                System.out.println("Введите число поменьше: ");
-            } else if (userNumber < compNumber) {
-                System.out.println("Введите число побольше: ");
+            try {
+                System.out.println("Введите любое число от 1 до 10: ");
+                userNumber = input.nextInt();
+
+                if (userNumber < 1 || userNumber > 10) {
+                    throw new Exception();
+                }
+
+                if (userNumber > compNumber) {
+                    System.out.println("Введите число поменьше: ");
+                } else if (userNumber < compNumber) {
+                    System.out.println("Введите число побольше: ");
+                }
+
+                if (userNumber != EXIT_CODE) {
+                    numberOfAttempts++;
+                }
             }
 
-            if (userNumber != EXIT_CODE) {
-                numberOfAttempts++;
+            catch (Exception e) {
+                inputResult = false;
             }
 
-
-        } while (compNumber != userNumber);
+        } while (compNumber != userNumber || inputResult == false);
 
         System.out.println("Поздравляю,вы угадали число!! ");
         System.out.println("Количество попыток: " + numberOfAttempts);
