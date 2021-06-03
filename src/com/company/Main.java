@@ -66,8 +66,10 @@ public class Main {
                 }
 
                 if (userNumber > compNumber) {
+                    max=userNumber;
                     System.out.println("Введите число поменьше: от " +min+ "до "+userNumber);
                 } else if (userNumber < compNumber) {
+                    min=userNumber;
                     System.out.println("Введите число побольше: от "+userNumber+ "до " +max);
                 }
 
