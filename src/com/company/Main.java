@@ -12,8 +12,8 @@ public class Main {
         int numberOfAttempts = 0;
         int compNumber = 0;
         int userNumber = 0;
-        int max=0;
-        int min=100;
+        int max = 0;
+        int min = 100;
         final int EXIT_CODE = -1;
         boolean inputNumber;
 
@@ -29,26 +29,25 @@ public class Main {
 
             switch (difficulty) {
                 case 1:
-                    System.out.println("легкий\nВведите любое число от 1 до 10:");
-                    compNumber = rnd.nextInt(10) + 1;
-                    max=10;
-                    min=1;
+                    System.out.println("легкий\nВведите любое число от 1 до 100:");
+                    compNumber = rnd.nextInt(100) + 1;
+                    max = 100;
+                    min = 1;
                     break;
                 case 2:
-                    System.out.println("средний\nВведите любое число от 1 до 50:  ");
-                    compNumber = rnd.nextInt(50) + 1;
-                    max=50;
-                    min=1;
+                    System.out.println("средний\nВведите любое число от 1 до 250:  ");
+                    compNumber = rnd.nextInt(250) + 1;
+                    max = 250;
+                    min = 1;
                     break;
                 case 3:
-                    System.out.println("сложный\nВведите любое число от 1 до 100: ");
-                    compNumber = rnd.nextInt(100) + 1;
-                    max=100;
-                    min=1;
+                    System.out.println("сложный\nВведите любое число от 1 до 500: ");
+                    compNumber = rnd.nextInt(500) + 1;
+                    max = 500;
+                    min = 1;
                     break;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             inputDifficulty = false;
             System.out.println("Ошибка ввода,перезапустите программу " + e.getMessage());
         }
@@ -61,23 +60,22 @@ public class Main {
             try {
                 userNumber = input.nextInt();
 
-                if (userNumber < 1 || userNumber > 100) {
+                if (userNumber < 1 || userNumber > 500) {
                     throw new Exception();
                 }
 
                 if (userNumber > compNumber) {
-                    max=userNumber;
-                    System.out.println("Введите число поменьше: от " +min+ "до "+userNumber);
+                    max = userNumber;
+                    System.out.println("Введите число поменьше: от " + min + " до " + userNumber);
                 } else if (userNumber < compNumber) {
-                    min=userNumber;
-                    System.out.println("Введите число побольше: от "+userNumber+ "до " +max);
+                    min = userNumber;
+                    System.out.println("Введите число побольше: от " + userNumber + " до " + max);
                 }
 
                 if (userNumber != EXIT_CODE) {
                     numberOfAttempts++;
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 inputNumber = false;
             }
 
@@ -85,7 +83,7 @@ public class Main {
 
 
         //decision result
-        if (compNumber == 10) {
+        if (compNumber == 150) {
             System.out.print("Счастливое число :) ");
         }
 
