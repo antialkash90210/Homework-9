@@ -18,7 +18,7 @@ public class Main {
         boolean inputNumber;
 
 
-        //choice of difficulty level
+        // TODO: 03.06.2021   choice of difficulty level
         int difficulty;
         boolean inputDifficulty;
 
@@ -52,7 +52,7 @@ public class Main {
             System.out.println("Ошибка ввода,перезапустите программу " + e.getMessage());
         }
 
-        //computer number output
+        // TODO: 03.06.2021  computer number output
         do {
             inputNumber = true;
 //           Scanner input = new Scanner(System.in); - try catch работает только при переинициализации Scanner
@@ -82,10 +82,8 @@ public class Main {
         } while (compNumber != userNumber || inputNumber == false);
 
 
-        //decision result
-        if (compNumber == 150) {
-            System.out.print("Счастливое число :) ");
-        }
+        // TODO: 03.06.2021  decision result
+
 
         System.out.println("Поздравляю,вы угадали число!! ");
         System.out.println("Количество попыток: " + numberOfAttempts);
@@ -96,6 +94,10 @@ public class Main {
             System.out.println("среднячок");
         } else {
             System.out.println("лошара");
+        }
+
+        if (compNumber == 150) {
+            System.out.print("Счастливое число :) ");
         }
     }
 }
